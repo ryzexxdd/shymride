@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Вело Шымкент — Сообщество настоящих велосипедистов</title>
+    <meta name="description"
+        content="Лучший велодвиж в Шымкенте. Покатушки, открытия сезона, конкурсы и сообщество любителей велосипедов.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <img src="logo.png" alt="Вело Шымкент Лого" class="logo" id="mainLogo">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">SHYM<span>RIDE</span></h1>
+                <p class="hero-subtitle">Катайся с нами, чувствуй ритм города</p>
+
+                <div class="counter-badge">
+                    <span class="pulse"></span>
+                    На данный момент едут больше 60+ людей
+                </div>
+
+                <div class="hero-actions">
+                    <div class="action-btn-wrapper">
+                        <button class="btn btn-primary" onclick="openModal('seasonModal')">Открытие сезона</button>
+                        <span class="btn-caption">15 Марта 2026</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('rulesModal')">Правила</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">Атмосфера наших дорог</h2>
+                <div class="photo-grid">
+                    <div class="photo-item"><img src="1.png" alt="Велодорога 1"></div>
+                    <div class="photo-item"><img src="2.png" alt="Велодорога 2"></div>
+                    <div class="photo-item"><img src="3.png" alt="Велодорога 3"></div>
+                    <div class="photo-item"><img src="4.png" alt="Велодорога 4"></div>
+                    <div class="photo-item"><img src="5.png" alt="Велодорога 5"></div>
+                    <div class="photo-item"><img src="6.png" alt="Велодорога 6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="registration">
+            <div class="container">
+                <h2 class="section-title">Присоединяйся к нам</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label>1. Ваше имя?</label>
+                        <input type="text" id="userName" placeholder="Введите ваше имя" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. Сколько лет?</label>
+                        <div class="chip-group" id="ageGroup">
+                            <button class="chip" onclick="selectChip('age', '11')">11</button>
+                            <button class="chip" onclick="selectChip('age', '12')">12</button>
+                            <button class="chip" onclick="selectChip('age', '13')">13</button>
+                            <button class="chip" onclick="selectChip('age', '14')">14</button>
+                            <button class="chip" onclick="selectChip('age', '15')">15</button>
+                            <button class="chip" onclick="selectChip('age', '16')">16</button>
+                            <button class="chip" onclick="selectChip('age', '17+')">17+</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. Стиль катания?</label>
+                        <div class="chip-group" id="styleGroup">
+                            <button class="chip" onclick="selectChip('style', 'Фрирайд')">Фрирайд</button>
+                            <button class="chip" onclick="selectChip('style', 'Стант')">Стант</button>
+                            <button class="chip" onclick="selectChip('style', 'Дропы')">Дропы</button>
+                            <button class="chip" onclick="selectChip('style', 'Все вместе')">Все вместе</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-whatsapp-submit" onclick="submitToWhatsapp()">
+                        Отправить в WhatsApp
+                    </button>
+
+                    <div class="contact-footer">
+                        <p>Напиши нам:</p>
+                        <a href="tel:+77083447253" class="admin-number">+7 708 344 7253</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="https://chat.whatsapp.com/EhsJXz8TYAvFH1wcOOyQQx?mode=gi_t" class="btn btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.174c1.511.895 3.357 1.447 5.232 1.447 5.726 0 10.388-4.661 10.39-10.387.001-2.774-1.08-5.381-3.044-7.345-1.962-1.964-4.572-3.044-7.344-3.044-5.728 0-10.391 4.664-10.393 10.389-.001 2.04.593 4.02 1.716 5.71l-1.077 3.931 4.045-1.061z" />
+                </svg>
+                Вступить в группу
+            </a>
+            <p class="admin-footer-text">Админ: +7 708 344 7253</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="seasonModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('seasonModal')">&times;</span>
+            <div class="modal-scroll-area">
+                <div class="date-badge">15 Марта 2026</div>
+                <h2>🚴♂️ КАК ПРОЙДЁТ ВЕЛООТКРЫТИЕ</h2>
+                <div class="info-card">
+                    <p><strong>📍 СТАРТ — Парк Абая</strong></p>
+                    <p><strong>🕛 12:00 начинаем сбор.</strong></p>
+                </div>
+
+                <div class="timeline">
+                    <div class="time-item">
+                        <span class="time">12:00 – 13:00</span>
+                        <p>Подтягиваемся, знакомимся, разогреваемся.</p>
+                    </div>
+                    <div class="time-item">
+                        <span class="time">13:00 – 14:00</span>
+                        <p>Делаем первый движ:<br>🔥 конкурсы<br>🔥 лучший вилли<br>🔥 стильные байки<br>🔥 фото и
+                            съёмки</p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    👉 В 14:00 строимся и выдвигаемся колонной.
+                </div>
+
+                <hr>
+
+                <h3>🚴 ЕДЕМ В Дендропарк Шымкента</h3>
+                <p>Едем спокойно и красиво. Пусть город видит, как выглядит настоящий велодвиж.</p>
+
+                <hr>
+
+                <div class="info-card">
+                    <p><strong>📍 ОСТАНОВКА — ДЕНДРОПАРК</strong></p>
+                    <p>Небольшая пауза, чтобы перевести дух и продолжить:</p>
+                    <ul>
+                        <li>🔥 мини-конкурсы</li>
+                        <li>🔥 отдых</li>
+                        <li>🔥 общение</li>
+                        <li>🔥 съёмки</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('rulesModal')">&times;</span>
+            <div class="modal-scroll-area">
+                <h2>📌 🚴♂️ ПРАВИЛА ВЕЛООТКРЫТИЯ 2026</h2>
+                <p class="intro-text">Ребята, мы собираемся ради кайфа, скорости и атмосферы. Чтобы всё прошло мощно и
+                    без травм — соблюдаем простые правила 👇</p>
+
+                <div class="rule-section">
+                    <h3>🔹 Безопасность прежде всего</h3>
+                    <ul class="check-list">
+                        <li>✅ держим дистанцию</li>
+                        <li>✅ не вылетаем на встречку</li>
+                        <li>✅ контролируем скорость в толпе</li>
+                    </ul>
+                    <p class="warning-text">👉 Мы открываем сезон, а не травмпункт.</p>
+                </div>
+
+                <div class="rule-section">
+                    <h3>🔹 Уважаем город и людей</h3>
+                    <ul class="check-list">
+                        <li>✅ пропускаем пешеходов</li>
+                        <li>✅ не создаём опасных ситуаций</li>
+                        <li>✅ помним, что мы представляем велодвиж Шымкента</li>
+                    </ul>
+                    <p class="highlight-text">👉 Пусть люди смотрят и думают: «вот это красиво», а не «кто их выпустил».
+                    </p>
+                </div>
+
+                <div class="rule-section">
+                    <h3>🔹 Трюки и стиль</h3>
+                    <ul class="check-list">
+                        <li>✅ вилли, стоппи и дропы — только вне плотной толпы</li>
+                        <li>✅ не делаем трюки рядом с участниками</li>
+                    </ul>
+                    <p>Будут конкурсы и там вы покажите что умеете</p>
+                    <p class="highlight-text">👉 Стиль — это когда красиво, а не когда кто-то улетел.</p>
+                </div>
+
+                <div class="rule-section">
+                    <h3>🔹 Слушаем организаторов</h3>
+                    <ul class="check-list">
+                        <li>✅ не обгоняем колонну без необходимости</li>
+                        <li>✅ держим строй на старте</li>
+                        <li>✅ выполняем указания на маршруте</li>
+                    </ul>
+                    <p class="highlight-text">👉 Это не хаос, это организованный движ.</p>
+                </div>
+
+                <div class="important-section">
+                    <h3>⚠️ ВАЖНО</h3>
+                    <p class="danger-line">🚨 Первое нарушение — предупреждение.</p>
+                    <p class="danger-line">🚨 Второе нарушение — ты больше не участвуешь в наших покатушках.</p>
+                    <p>Без обид 🤝 Мы за безопасность и уважение.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
