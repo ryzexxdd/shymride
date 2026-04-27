@@ -6,7 +6,7 @@ function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -14,7 +14,26 @@ function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
+        document.body.style.overflow = '';
+    }
+}
+
+// Full Screen Page Logic
+function openPage(pageId) {
+    const page = document.getElementById(pageId);
+    if (page) {
+        page.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Scroll page to top
+        page.scrollTop = 0;
+    }
+}
+
+function closePage(pageId) {
+    const page = document.getElementById(pageId);
+    if (page) {
+        page.classList.remove('active');
+        document.body.style.overflow = '';
     }
 }
 

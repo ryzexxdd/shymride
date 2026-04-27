@@ -27,7 +27,7 @@
                 <img src="logo.png" alt="SHYMRIDE Logo" class="logo" id="mainLogo">
                 <span class="logo-text">SHYMRIDE</span>
             </div>
-            <button class="btn btn-gallery-toggle" onclick="openModal('galleryModal')">Атмосфера наших сходок</button>
+            <button class="btn btn-gallery-toggle" onclick="openPage('galleryPage')">Атмосфера наших сходок</button>
         </div>
     </header>
 
@@ -42,13 +42,14 @@
                     На данный момент едут больше 80+ человек
                 </div>
 
-                <div class="hero-actions">
-                    <div class="action-btn-wrapper">
-                        <button class="btn btn-primary" onclick="openModal('seasonModal')">Открытие сезона</button>
-                        <span class="btn-caption">2 Мая</span>
+                    <div class="hero-actions">
+                        <div class="action-btn-wrapper">
+                            <button class="btn btn-primary" onclick="openPage('seasonPage')">Открытие сезона</button>
+                            <span class="btn-caption">2 Мая</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openPage('rulesPage')">Правила</button>
+                        <button class="btn btn-sponsor" onclick="openPage('sponsorPage')">Стать спонсором</button>
                     </div>
-                    <button class="btn btn-secondary" onclick="openModal('rulesModal')">Правила</button>
-                </div>
             </div>
         </section>
 
@@ -169,134 +170,121 @@
         </div>
     </footer>
 
-    <!-- Modals -->
-    <div id="seasonModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('seasonModal')">&times;</span>
-            <div class="modal-scroll-area">
-                <div class="date-badge">2 Мая</div>
-                <h2>🚴♂️ КАК ПРОЙДЁТ ВЕЛООТКРЫТИЕ</h2>
-                <div class="info-card">
-                    <p><strong>📍 СТАРТ — Парк Абая</strong></p>
-                    <p><strong>🕛 12:00 начинаем сбор.</strong></p>
+    <!-- Full Screen "Pages" -->
+    <div id="seasonPage" class="full-page-overlay">
+        <button class="exit-btn" onclick="closePage('seasonPage')">✕</button>
+        <div class="page-content-wrapper">
+            <div class="date-badge">2 Мая</div>
+            <h1 class="page-title">🚴♂️ КАК ПРОЙДЁТ ВЕЛООТКРЫТИЕ</h1>
+            <div class="info-card">
+                <p><strong>📍 СТАРТ — Парк Абая</strong></p>
+                <p><strong>🕛 12:00 начинаем сбор.</strong></p>
+            </div>
+
+            <div class="timeline">
+                <div class="time-item">
+                    <span class="time">12:00 – 13:00</span>
+                    <p>Подтягиваемся, знакомимся, разогреваемся.</p>
                 </div>
-
-                <div class="timeline">
-                    <div class="time-item">
-                        <span class="time">12:00 – 13:00</span>
-                        <p>Подтягиваемся, знакомимся, разогреваемся.</p>
-                    </div>
-                    <div class="time-item">
-                        <span class="time">13:00 – 14:00</span>
-                        <p>Делаем первый движ:<br>🔥 конкурсы<br>🔥 лучший вилли<br>🔥 стильные байки<br>🔥 фото и
-                            съёмки</p>
-                    </div>
+                <div class="time-item">
+                    <span class="time">13:00 – 14:00</span>
+                    <p>Делаем первый движ:<br>🔥 конкурсы<br>🔥 лучший вилли<br>🔥 стильные байки<br>🔥 фото и съёмки</p>
                 </div>
+            </div>
 
-                <div class="highlight">
-                    👉 В 14:00 строимся и выдвигаемся колонной.
-                </div>
+            <div class="highlight">
+                👉 В 14:00 строимся и выдвигаемся колонной.
+            </div>
 
-                <hr>
+            <hr>
+            <h3>🚴 ЕДЕМ В Дендропарк Шымкента</h3>
+            <p>Едем спокойно и красиво. Пусть город видит, как выглядит настоящий велодвиж.</p>
+            <hr>
 
-                <h3>🚴 ЕДЕМ В Дендропарк Шымкента</h3>
-                <p>Едем спокойно и красиво. Пусть город видит, как выглядит настоящий велодвиж.</p>
-
-                <hr>
-
-                <div class="info-card">
-                    <p><strong>📍 ОСТАНОВКА — ДЕНДРОПАРК</strong></p>
-                    <p>Небольшая пауза, чтобы перевести дух и продолжить:</p>
-                    <ul>
-                        <li>🔥 мини-конкурсы</li>
-                        <li>🔥 отдых</li>
-                        <li>🔥 общение</li>
-                        <li>🔥 съёмки</li>
-                    </ul>
-                </div>
+            <div class="info-card">
+                <p><strong>📍 ОСТАНОВКА — ДЕНДРОПАРК</strong></p>
+                <p>Небольшая пауза, чтобы перевести дух и продолжить:</p>
+                <ul>
+                    <li>🔥 мини-конкурсы</li>
+                    <li>🔥 отдых</li>
+                    <li>🔥 общение</li>
+                    <li>🔥 съёмки</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div id="rulesModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('rulesModal')">&times;</span>
-            <div class="modal-scroll-area">
-                <h2>📌 🚴♂️ ПРАВИЛА ВЕЛООТКРЫТИЯ 2026</h2>
-                <p class="intro-text">Ребята, мы собираемся ради кайфа, скорости и атмосферы. Чтобы всё прошло мощно и
-                    без травм — соблюдаем простые правила 👇</p>
+    <div id="rulesPage" class="full-page-overlay">
+        <button class="exit-btn" onclick="closePage('rulesPage')">✕</button>
+        <div class="page-content-wrapper">
+            <h1 class="page-title">📌 ПРАВИЛА ВЕЛООТКРЫТИЯ 2026</h1>
+            <p class="intro-text">Ребята, мы собираемся ради кайфа, скорости и атмосферы. Чтобы всё прошло мощно и без травм — соблюдаем простые правила 👇</p>
 
-                <div class="rule-section">
-                    <h3>🔹 Безопасность прежде всего</h3>
-                    <ul class="check-list">
-                        <li>✅ держим дистанцию</li>
-                        <li>✅ не вылетаем на встречку</li>
-                        <li>✅ контролируем скорость в толпе</li>
-                    </ul>
-                    <p class="warning-text">👉 Мы открываем сезон, а не травмпункт.</p>
-                </div>
+            <div class="rule-section">
+                <h3>🔹 Безопасность прежде всего</h3>
+                <ul class="check-list">
+                    <li>✅ держим дистанцию</li>
+                    <li>✅ не вылетаем на встречку</li>
+                    <li>✅ контролируем скорость в толпе</li>
+                </ul>
+                <p class="warning-text">👉 Мы открываем сезон, а не травмпункт.</p>
+            </div>
 
-                <div class="rule-section">
-                    <h3>🔹 Уважаем город и людей</h3>
-                    <ul class="check-list">
-                        <li>✅ пропускаем пешеходов</li>
-                        <li>✅ не создаём опасных ситуаций</li>
-                        <li>✅ помним, что мы представляем велодвиж Шымкента</li>
-                    </ul>
-                    <p class="highlight-text">👉 Пусть люди смотрят и думают: «вот это красиво», а не «кто их выпустил».
-                    </p>
-                </div>
+            <div class="rule-section">
+                <h3>🔹 Уважаем город и людей</h3>
+                <ul class="check-list">
+                    <li>✅ пропускаем пешеходов</li>
+                    <li>✅ не создаём опасных ситуаций</li>
+                    <li>✅ помним, что мы представляем велодвиж Шымкента</li>
+                </ul>
+            </div>
 
-                <div class="rule-section">
-                    <h3>🔹 Трюки и стиль</h3>
-                    <ul class="check-list">
-                        <li>✅ вилли, стоппи и дропы — только вне плотной толпы</li>
-                        <li>✅ не делаем трюки рядом с участниками</li>
-                    </ul>
-                    <p>Будут конкурсы и там вы покажите что умеете</p>
-                    <p class="highlight-text">👉 Стиль — это когда красиво, а не когда кто-то улетел.</p>
-                </div>
-
-                <div class="rule-section">
-                    <h3>🔹 Слушаем организаторов</h3>
-                    <ul class="check-list">
-                        <li>✅ не обгоняем колонну без необходимости</li>
-                        <li>✅ держим строй на старте</li>
-                        <li>✅ выполняем указания на маршруте</li>
-                    </ul>
-                    <p class="highlight-text">👉 Это не хаос, это организованный движ.</p>
-                </div>
-
-                <div class="important-section">
-                    <h3>⚠️ ВАЖНО</h3>
-                    <p class="danger-line">🚨 Первое нарушение — предупреждение.</p>
-                    <p class="danger-line">🚨 Второе нарушение — ты больше не участвуешь в наших покатушках.</p>
-                    <p>Без обид 🤝 Мы за безопасность и уважение.</p>
-                </div>
+            <div class="important-section">
+                <h3>⚠️ ВАЖНО</h3>
+                <p class="danger-line">🚨 Первое нарушение — предупреждение.</p>
+                <p class="danger-line">🚨 Второе нарушение — ты больше не участвуешь в наших покатушках.</p>
+                <p>🤝 Мы за безопасность и уважение.</p>
             </div>
         </div>
     </div>
 
-    <div id="galleryModal" class="modal">
-        <div class="modal-content" style="max-width: 900px;">
-            <span class="close-btn" onclick="closeModal('galleryModal')">&times;</span>
-            <div class="modal-scroll-area">
-                <h2 style="text-align: center;">Атмосфера наших сходок</h2>
-                <div class="photo-grid">
-                    <div class="photo-item"><img src="1.png" alt="Велодорога 1"></div>
-                    <div class="photo-item"><img src="2.png" alt="Велодорога 2"></div>
-                    <div class="photo-item"><img src="3.png" alt="Велодорога 3"></div>
-                    <div class="photo-item"><img src="4.png" alt="Велодорога 4"></div>
-                    <div class="photo-item"><img src="5.png" alt="Велодорога 5"></div>
-                    <div class="photo-item"><img src="6.png" alt="Велодорога 6"></div>
-                    <div class="photo-item"><img src="7.png" alt="Велодорога 7"></div>
-                    <div class="photo-item"><img src="8.png" alt="Велодорога 8"></div>
-                    <div class="photo-item"><img src="9.png" alt="Велодорога 9"></div>
-                </div>
+    <div id="galleryPage" class="full-page-overlay">
+        <button class="exit-btn" onclick="closePage('galleryPage')">✕</button>
+        <div class="page-content-wrapper">
+            <h1 class="page-title">Атмосфера наших сходок</h1>
+            <div class="about-gallery-text">
+                Мы катаем с лета прошлого года, мы делали самые маштабные сходки в городе Шымкент.
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="1.png" alt="Велодорога 1"></div>
+                <div class="photo-item"><img src="2.png" alt="Велодорога 2"></div>
+                <div class="photo-item"><img src="3.png" alt="Велодорога 3"></div>
+                <div class="photo-item"><img src="4.png" alt="Велодорога 4"></div>
+                <div class="photo-item"><img src="5.png" alt="Велодорога 5"></div>
+                <div class="photo-item"><img src="6.png" alt="Велодорога 6"></div>
+                <div class="photo-item"><img src="7.png" alt="Велодорога 7"></div>
+                <div class="photo-item"><img src="8.png" alt="Велодорога 8"></div>
+                <div class="photo-item"><img src="9.png" alt="Велодорога 9"></div>
             </div>
         </div>
     </div>
-    
+
+    <div id="sponsorPage" class="full-page-overlay">
+        <button class="exit-btn" onclick="closePage('sponsorPage')">✕</button>
+        <div class="page-content-wrapper">
+            <h1 class="page-title">Стать спонсором</h1>
+            <div class="sponsor-info">
+                <div class="about-gallery-text" style="text-align: center; border-left: none; border-bottom: 4px solid var(--primary);">
+                    Мы регулярно ищем спонсора на наши сходки чтобы бесплатно разыгривовать бесплатные наклейки мерчи и еще много интересных подарков.
+                </div>
+                <p style="font-size: 18px; margin-top: 32px;">О спонсорстве пишите нам на WhatsApp:</p>
+                <a href="https://wa.me/77083447253" class="whatsapp-link-large">
+                    Написать Илье (+7 708 344 72 53)
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
