@@ -23,8 +23,11 @@
 
     <header class="header">
         <div class="container header-content">
-            <img src="logo.png" alt="SHYMRIDE Logo" class="logo" id="mainLogo">
-            <span class="logo-text">SHYMRIDE</span>
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="SHYMRIDE Logo" class="logo" id="mainLogo">
+                <span class="logo-text">SHYMRIDE</span>
+            </div>
+            <button class="btn btn-gallery-toggle" onclick="openModal('galleryModal')">Атмосфера наших сходок</button>
         </div>
     </header>
 
@@ -36,32 +39,74 @@
 
                 <div class="counter-badge">
                     <span class="pulse"></span>
-                    На данный момент едут больше 60+ людей
+                    На данный момент едут больше 80+ человек
                 </div>
 
                 <div class="hero-actions">
                     <div class="action-btn-wrapper">
                         <button class="btn btn-primary" onclick="openModal('seasonModal')">Открытие сезона</button>
-                        <span class="btn-caption">14 Марта 2026</span>
+                        <span class="btn-caption">2 Мая</span>
                     </div>
                     <button class="btn btn-secondary" onclick="openModal('rulesModal')">Правила</button>
                 </div>
             </div>
         </section>
 
-        <section class="gallery">
+        <section class="about-us">
             <div class="container">
-                <h2 class="section-title">Атмосфера наших дорог</h2>
-                <div class="photo-grid">
-                    <div class="photo-item"><img src="1.png" alt="Велодорога 1"></div>
-                    <div class="photo-item"><img src="2.png" alt="Велодорога 2"></div>
-                    <div class="photo-item"><img src="3.png" alt="Велодорога 3"></div>
-                    <div class="photo-item"><img src="4.png" alt="Велодорога 4"></div>
-                    <div class="photo-item"><img src="5.png" alt="Велодорога 5"></div>
-                    <div class="photo-item"><img src="6.png" alt="Велодорога 6"></div>
-                    <div class="photo-item"><img src="7.png" alt="Велодорога 7"></div>
-                    <div class="photo-item"><img src="8.png" alt="Велодорога 8"></div>
-                    <div class="photo-item"><img src="9.png" alt="Велодорога 9"></div>
+                <h2 class="section-title">О нас</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">210+</span>
+                        <span class="stat-label">Человек в группе</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">80+</span>
+                        <span class="stat-label">Уже едут с нами</span>
+                    </div>
+                </div>
+                
+                <div class="benefits">
+                    <h3>Почему круто катать на велике?</h3>
+                    <ul>
+                        <li>Укрепляет сердце и сосуды</li>
+                        <li>Помогает держать тело в тонусе</li>
+                        <li>Улучшает настроение и снимает стресс</li>
+                        <li>Экологичный и быстрый транспорт</li>
+                        <li>Новые знакомства и крутое общение</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop">
+            <div class="container">
+                <h2 class="section-title">Наш Магазин</h2>
+                <div class="product-card">
+                    <img src="stick.png" alt="Стикерпак" class="product-image">
+                    <h3 class="product-title">Наши личные крутые стикеры</h3>
+                    <p class="product-price">990 тнг</p>
+                    <div class="promo-badge">Промокод: KRUT (Скидка 10%)</div>
+                    <p class="shop-address">
+                        <strong>Где купить:</strong><br>
+                        г. Шымкент, Улица Казыбек Би, 55/1
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы</h2>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">★★★★★</div>
+                        <span class="review-time">18:46</span>
+                    </div>
+                    <p class="review-text">Получила наклейки. Спасибо большое. Очень качественные. Советую! Ставлю пять звёзд</p>
+                    <div class="review-footer">
+                        <span class="review-author">Наш участник</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -129,7 +174,7 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('seasonModal')">&times;</span>
             <div class="modal-scroll-area">
-                <div class="date-badge">14 Марта 2026</div>
+                <div class="date-badge">2 Мая</div>
                 <h2>🚴♂️ КАК ПРОЙДЁТ ВЕЛООТКРЫТИЕ</h2>
                 <div class="info-card">
                     <p><strong>📍 СТАРТ — Парк Абая</strong></p>
@@ -232,6 +277,26 @@
         </div>
     </div>
 
+    <div id="galleryModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-btn" onclick="closeModal('galleryModal')">&times;</span>
+            <div class="modal-scroll-area">
+                <h2 style="text-align: center;">Атмосфера наших сходок</h2>
+                <div class="photo-grid">
+                    <div class="photo-item"><img src="1.png" alt="Велодорога 1"></div>
+                    <div class="photo-item"><img src="2.png" alt="Велодорога 2"></div>
+                    <div class="photo-item"><img src="3.png" alt="Велодорога 3"></div>
+                    <div class="photo-item"><img src="4.png" alt="Велодорога 4"></div>
+                    <div class="photo-item"><img src="5.png" alt="Велодорога 5"></div>
+                    <div class="photo-item"><img src="6.png" alt="Велодорога 6"></div>
+                    <div class="photo-item"><img src="7.png" alt="Велодорога 7"></div>
+                    <div class="photo-item"><img src="8.png" alt="Велодорога 8"></div>
+                    <div class="photo-item"><img src="9.png" alt="Велодорога 9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 
